@@ -1,0 +1,10 @@
+kaggle_environments
+requests
+pandas
+matplotlib
+seaborn
+jupyterlab
+pyyaml
+tensorflow
+torch
+ 

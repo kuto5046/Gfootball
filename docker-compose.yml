@@ -1,0 +1,11 @@
+version: "3"
+services:
+  jupyter:
+    build: .  # build contexts
+    volumes:
+      - $PWD:/work/
+    ports:
+      - 8888:8888
+    tty: True
+    stdin_open: True 
+    command: jupyter lab --ip=0.0.0.0 --allow-root --no-browser

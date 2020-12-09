@@ -1,0 +1,4 @@
+kutopon: "./agent/kutopon.py"
+memory: "./agent/memory.py"
+beast1: "./agent/deep5_SF220_kl2_cp385.py"
+beast2: "./agent/nov_23_WK6_unroll64_deep_r3_cp118.py"
