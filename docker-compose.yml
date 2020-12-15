@@ -6,6 +6,6 @@ services:
       - $PWD:/work/
     ports:
       - 8888:8888
-    tty: True
-    stdin_open: True 
+    # tty: True
+    # stdin_open: True 
     command: jupyter lab --ip=0.0.0.0 --allow-root --no-browser

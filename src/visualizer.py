@@ -2,10 +2,12 @@ from matplotlib import animation, patches, rcParams
 from matplotlib import pyplot as plt
 from kaggle_environments.envs.football.helpers import *
 
-WIDTH = 100
-HEIGHT = 46.2
+# WIDTH = 110
+# HEIGHT = 46.2
+# PADDING = 10
+WIDTH = 105
+HEIGHT = 68
 PADDING = 10
-
 
 def initFigure(figwidth=12):
     figheight = figwidth * (HEIGHT + 2 * PADDING) / (WIDTH + 2 * PADDING)
@@ -190,12 +192,12 @@ def player_actions(step, side):
         actions = {0: "idle", 1: "←", 2: "↖", 3: "↑", 4: "↗", 5: "→", 6: "↘", 7: "↓", 8: "↙",
                    9: "l_pass", 10: "h_pass", 11: "s_pass", 12: "shot",
                    13: "sprint", 14: "rel_dir", 15: "rel_spr",
-                   16: "slide", 17: "dribble", 18: "stp_drb", 19: "auto"}
+                   16: "slide", 17: "dribble", 18: "stp_drb"}
     else:
         actions = {0: "idle", 1: "→", 2: "↘", 3: "↓", 4: "↙", 5: "←", 6: "↖", 7: "↑", 8: "↗",
                    9: "l_pass", 10: "h_pass", 11: "s_pass", 12: "shot",
                    13: "sprint", 14: "rel_dir", 15: "rel_spr",
-                   16: "slide", 17: "dribble", 18: "stp_drb", 19: "auto"}
+                   16: "slide", 17: "dribble", 18: "stp_drb"}
 
     obs = step[side]["observation"]["players_raw"][0]
 
@@ -332,5 +334,4 @@ def visualize(trace):
     fig.subplots_adjust(left=0, bottom=0, right=1, top=1, wspace=None, hspace=None)
     anim = animation.FuncAnimation(fig, animate, init_func=init, blit=True,
                                    interval=100, frames=len(steps), repeat=True)
-    fig.clear()
     return anim
